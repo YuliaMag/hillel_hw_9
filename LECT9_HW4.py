@@ -8,6 +8,7 @@ print(res)
 
 # =============================================== #
 
+# HW 4.2 (using string methods)
 with open("wiki_page.txt", "r") as f:
     text = f.read()
 
