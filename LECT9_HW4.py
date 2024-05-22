@@ -13,18 +13,19 @@ print(res)
 
 with open("wiki_page.txt") as f:
     for line in f:
+        ln = f.read()
         res = []
         start_index = 0
         while start_index != -1:
-            start_index = line.find("<a", start_index)
+            start_index = ln.find("<a ", start_index)
             if start_index == -1:
                 break
             else:
-                start_index = line.find("href=\"", start_index) + len("href=\"")
-                end_index = line.find("\" ", start_index)
-                href_value = line[start_index: end_index]
+                start_index = ln.find("href=\"", start_index) + len("href=\"")
+                end_index = ln.find("\" ", start_index)
+                href_value = ln[start_index: end_index]
                 res.append(href_value)
-                print(res, end="")
+        print(res)
 
 
 
